@@ -10,6 +10,12 @@
 
    - 현재는 전체 리랜더링 -> 구독 혹은 사용하고 있는 컴포넌트만 리랜더링 되도록
 
-3. Recoil Selector 기능 추가
+3. useEffect 비동기 콜백 함수
 
-4. Redux 비동기 기능 추가 (saga 혹은 thunk 기능)
+   - 현재 useEffect 내부에서 async await을 활용한 외부 비동기 함수를 호출 시 비동기 작업이 처리가 안된다.
+   - 따라서, Promise.then 을 이용해 후에 Promise의 상태가 변하면 그때 내부 콜백을 이용한 형태를 사용중이다.
+   - 아마도 executeEffect 함수 호출 과정에서, Promise.then 혹은 await을 이용한 비동기 처리가 되지 않아서 이런 현상이 발생되는 것으로 예상이 된다.
+
+4. Recoil Selector 기능 추가
+
+5. Redux 비동기 기능 추가 (saga 혹은 thunk 기능)
